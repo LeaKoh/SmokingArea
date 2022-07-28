@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_bar);
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
+
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

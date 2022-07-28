@@ -5,17 +5,24 @@
     android:layout_height="match_parent"
     tools:context=".CalendarFragment">
 
-    <CalendarView
-        android:id="@+id/calendar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"/>
+    <RelativeLayout
+        android:id="@+id/one"
+        android:layout_width="wrap_content"
+        android:layout_height="450dp">
+
+        <CalendarView
+            android:id="@+id/calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+    </RelativeLayout>
+
 
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/calendar">
+        android:layout_alignBottom="@+id/one">
 
 
         <TextView
@@ -31,11 +38,11 @@
             android:id="@+id/smoke_time"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="8시 00분"
-            android:textSize="15sp"
-            android:padding="15dp"
             android:layout_toRightOf="@+id/smoke_date"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="8시 00분"
+            android:textSize="15sp" />
 
 
         <TextView
@@ -46,6 +53,14 @@
             android:padding="15dp"
             android:text="1개"
             android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true">
 
     </RelativeLayout>
 

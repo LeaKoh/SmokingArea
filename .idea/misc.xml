@@ -10,6 +10,8 @@
         <entry key="app/src/main/res/drawable-v24/underbar_calendar.xml" value="0.147" />
         <entry key="app/src/main/res/drawable-v24/underbar_chart.xml" value="0.147" />
         <entry key="app/src/main/res/drawable-v24/underbar_home.xml" value="0.147" />
+        <entry key="app/src/main/res/drawable/add_smoking.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/circle_calendar.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2753623188405797" />
         <entry key="app/src/main/res/layout/activity_maps.xml" value="0.2753623188405797" />
         <entry key="app/src/main/res/layout/fragment_calendar.xml" value="0.2753623188405797" />
