@@ -18,7 +18,7 @@ import java.util.List;
 public class ListViewAdapter extends BaseAdapter {
     private ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>() ;
 
-    public ListViewAdapter() {
+    public ListViewAdapter(HomeFragment homeFragment, String[] strTitle, String[] strDescription, int image) {
 
     }
 
