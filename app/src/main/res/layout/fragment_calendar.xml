@@ -8,7 +8,7 @@
     <RelativeLayout
         android:id="@+id/one"
         android:layout_width="wrap_content"
-        android:layout_height="450dp">
+        android:layout_height="410dp">
 
         <CalendarView
             android:id="@+id/calendar"
@@ -24,35 +24,14 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/one">
 
-
-        <TextView
-            android:id="@+id/smoke_date"
-            android:layout_width="100dp"
+        <ListView
+            android:id="@+id/smoking_data"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="15dp"
-            android:text="7월 29일"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/smoke_time"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/smoke_date"
-            android:gravity="center"
-            android:padding="15dp"
-            android:text="8시 00분"
-            android:textSize="15sp" />
+            tools:listitem="@layout/smoking_date_item" />
 
 
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:gravity="right"
-            android:padding="15dp"
-            android:text="1개"
-            android:textSize="15sp" />
+
 
     </RelativeLayout>
 
@@ -60,10 +39,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true">
+        android:layout_alignParentRight="true"
+        android:layout_margin="20dp"
+        >
+
+        <ImageButton
+            android:id="@+id/add"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/circle_calendar"
+            android:background="#00FFFFFF"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/add_smoking"
+            android:background="#00FFFFFF"/>
 
     </RelativeLayout>
-
 
 
 
