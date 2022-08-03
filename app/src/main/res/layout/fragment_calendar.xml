@@ -6,32 +6,29 @@
     tools:context=".CalendarFragment">
 
     <RelativeLayout
-        android:id="@+id/one"
+        android:id="@+id/calendar_box"
         android:layout_width="wrap_content"
-        android:layout_height="410dp">
+        android:layout_height="400dp">
 
-        <CalendarView
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
             android:id="@+id/calendar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true" />
+            android:layout_height="500dp"/>
+
     </RelativeLayout>
 
 
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/one">
+        android:layout_height="390dp"
+        android:layout_alignParentBottom="true">
 
         <ListView
             android:id="@+id/smoking_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@layout/smoking_date_item" />
-
-
-
 
     </RelativeLayout>
 
