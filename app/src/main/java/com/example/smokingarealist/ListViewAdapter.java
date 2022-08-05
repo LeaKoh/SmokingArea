@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListViewAdapter extends BaseAdapter {
-    private ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>() ;
+    private final ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>() ;
 
     public ListViewAdapter(HomeFragment homeFragment, String[] strTitle, String[] strDescription, int image) {
 
@@ -42,9 +42,9 @@ public class ListViewAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.listview_item, parent, false);
         }
 
-        ImageView iconImageView = (ImageView) convertView.findViewById(R.id.imageview) ;
-        TextView titleTextView = (TextView) convertView.findViewById(R.id.name) ;
-        TextView descTextView = (TextView) convertView.findViewById(R.id.address) ;
+        ImageView iconImageView = convertView.findViewById(R.id.imageview);
+        TextView titleTextView = convertView.findViewById(R.id.name);
+        TextView descTextView = convertView.findViewById(R.id.address);
 
         ListViewItem listViewItem = listViewItemList.get(position);
 
