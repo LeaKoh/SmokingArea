@@ -1,12 +1,14 @@
 package com.example.smokingarealist;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -15,7 +17,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListViewAdapter extends BaseAdapter {
+public class ListViewAdapter extends BaseAdapter{
     private final ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>() ;
 
     public ListViewAdapter(HomeFragment homeFragment, String[] strTitle, String[] strDescription, int image) {
@@ -45,18 +47,21 @@ public class ListViewAdapter extends BaseAdapter {
         ImageView iconImageView = convertView.findViewById(R.id.imageview);
         TextView titleTextView = convertView.findViewById(R.id.name);
         TextView descTextView = convertView.findViewById(R.id.address);
+        ImageButton imageButton = convertView.findViewById(R.id.imagebutton);
 
         ListViewItem listViewItem = listViewItemList.get(position);
 
         iconImageView.setImageDrawable(listViewItem.getIcon());
         titleTextView.setText(listViewItem.getTitle());
         descTextView.setText(listViewItem.getDesc());
+        imageButton.setImageDrawable(listViewItem.getIcon());
 
         return convertView;
     }
 
     @Override
     public long getItemId(int position) {
+
         return position ;
     }
 
