@@ -8,9 +8,7 @@ public class ListViewItem {
     private String descStr;
     private Drawable find;
 
-    public void setIcon(Drawable icon){
-        iconDrawable = icon;
-    }
+    public void setIcon(Drawable icon){iconDrawable = icon;}
     public void setTitle(String title){
         titleStr = title;
     }
