@@ -1,9 +1,16 @@
 package com.example.smokingarealist;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
+
 import java.util.ArrayList;
 import java.util.Date;
 
+@Entity
 public class CountListViewItem {
+    @PrimaryKey(autoGenerate = true)
+
     private Date write_date;
     private Integer smoke_count;
 
@@ -21,6 +28,7 @@ public class CountListViewItem {
     public void setSmoke_count(){
         this.smoke_count = smoke_count;
     }
+
 
     public CountListViewItem(Date write_date, Integer smoke_count){
         this.write_date = write_date;

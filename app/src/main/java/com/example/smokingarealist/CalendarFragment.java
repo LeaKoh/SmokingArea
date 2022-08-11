@@ -15,6 +15,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -39,7 +42,11 @@ public class CalendarFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_calendar, container, false);
+
         ct = container.getContext();
+
+        final AppDataBase db = Room.databaseBuilder(getActivity(), AppDataBase.class, "smoke_db")
+                .allowMainThreadQueries().build();
 
         calendarView = v.findViewById(R.id.calendar);
 
@@ -55,6 +62,7 @@ public class CalendarFragment extends Fragment {
                 int count;
                 count = countListViewAdapter.getCount();
 
+                db.smokeDataDao().insert(new CountListViewItem(new Date(System.currentTimeMillis()),count));
                 countListViewItemArrayList.add(new CountListViewItem(new Date(System.currentTimeMillis()),count));
 
                 countListViewAdapter.notifyDataSetChanged();
@@ -64,6 +72,5 @@ public class CalendarFragment extends Fragment {
 
         return v;
     }
-
 }
 
