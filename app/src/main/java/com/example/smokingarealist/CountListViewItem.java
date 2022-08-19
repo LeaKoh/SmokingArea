@@ -6,11 +6,11 @@ import java.util.Date;
 public class CountListViewItem {
     private Date write_date;
     private Integer smoke_count;
+    int i,j;
 
     public Date getWrite_date(){
         return write_date;
     }
-
     public void setWrite_date(Date write_date){
         this.write_date = write_date;
     }
