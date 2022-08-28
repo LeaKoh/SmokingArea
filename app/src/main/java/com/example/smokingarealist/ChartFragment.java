@@ -1,5 +1,6 @@
 package com.example.smokingarealist;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -51,7 +52,6 @@ public class ChartFragment extends Fragment {
     int month = today.get ( today.MONTH ) + 1;
     int day = today.get ( today.DAY_OF_MONTH );
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_chart, container, false);
@@ -73,11 +73,13 @@ public class ChartFragment extends Fragment {
         barChart = (BarChart) v.findViewById(R.id.fragment_bluetooth_chat_barchart);
         graphInitSetting();
 
-        CalendarFragment calendarFragment = new CalendarFragment();
-
-        today_smoking = calendarFragment.getCount();
-        Date date = calendarFragment.getNow();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy년 MM월 dd일\naa HH시 mm분");
+        MainActivity mainActivity = (MainActivity)getActivity();
+        if (mainActivity.calendarFragment.countListViewAdapter != null) {
+            today_smoking = mainActivity.calendarFragment.countListViewAdapter.getCount();
+        } else {
+            today_smoking = 0;
+        }
+        SimpleDateFormat format = new SimpleDateFormat("yyyy년 MM월 dd일\naa hh시 mm분");
 
         //yesterday = today - 1;
         gap_smoking = today_smoking - yesterday_smoking;
@@ -87,7 +89,7 @@ public class ChartFragment extends Fragment {
         yesterday_smoke.setText(""+yesterday_smoking+" 개");
         gap_smoke.setText(""+gap_smoking);
         average_smoke.setText(""+avg_smoking+"개");
-        lastest_smoke.setText(format.format(date).toString());
+        lastest_smoke.setText(format.format(System.currentTimeMillis()));
 
 
 

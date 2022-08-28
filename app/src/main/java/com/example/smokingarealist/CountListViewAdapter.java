@@ -59,19 +59,19 @@ public class CountListViewAdapter extends BaseAdapter {
             count_textView = (TextView) convertView.findViewById(R.id.count_textview);
         }
 
-
-        long now = System.currentTimeMillis();
-
-        Date date = new Date(now);
+        CountListViewItem  countListViewItem = this.countListViewItemArrayList.get(pos);
+//        long now = System.currentTimeMillis();
+//
+//        Date date = new Date(now);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM월 dd일 hh:mm a");
 
-        date_textView.setText(dateFormat.format(date).toString());
-        count_textView.setText(Integer.toString(countListViewItemArrayList.size()));
+        date_textView.setText(dateFormat.format(countListViewItem.getWrite_date()));
+        count_textView.setText(countListViewItem.getSmoke_count().toString());
 
         return convertView;
-    }
 
+    }
 }
 
 
